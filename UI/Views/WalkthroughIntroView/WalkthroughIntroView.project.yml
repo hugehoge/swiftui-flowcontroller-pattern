@@ -1,0 +1,21 @@
+targets:
+  WalkthroughIntroView:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.walkthroughintroview
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/Views/WalkthroughIntroView
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/WalkthroughIntroView/Sources
+          ${SRCROOT}/bin/swiftlint UI/Views/WalkthroughIntroView/Sources
+    dependencies:
+      - target: Resources
+      - target: UIComponents
+      - target: UIServices

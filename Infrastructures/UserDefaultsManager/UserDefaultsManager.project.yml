@@ -1,0 +1,20 @@
+targets:
+  UserDefaultsManager:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.userdefaultsmanager
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: Infrastructures/UserDefaultsManager
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 Infrastructures/UserDefaultsManager/Sources
+          ${SRCROOT}/bin/swiftlint Infrastructures/UserDefaultsManager/Sources
+    dependencies:
+      - target: InfrastructureServices
+      - target: Entities

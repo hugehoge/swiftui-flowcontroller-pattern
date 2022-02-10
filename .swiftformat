@@ -1,0 +1,163 @@
+# ========================================
+# .swiftformat
+#   based on SwiftFormat 0.49.3
+# ========================================
+
+# Exclude files
+
+--exclude Repositories/AppStateRepository/Tests/Generated
+--exclude Resources/Sources/Generated
+--exclude UI/Views/AppSalesView/Tests/Generated
+--exclude UI/Views/RootView/Tests/Generated
+
+# Rules
+
+--enable acronyms
+--enable andOperator
+--enable anyObjectProtocol
+--enable assertionFailures
+--enable blankLinesAroundMark
+  --lineaftermarks true
+--enable blankLinesAtEndOfScope
+--enable blankLinesAtStartOfScope
+--disable blankLinesBetweenImports
+--enable blankLinesBetweenScopes
+--enable blockComments
+--enable braces
+  --allman false
+--enable consecutiveBlankLines
+--enable consecutiveSpaces
+--enable duplicateImports
+--enable elseOnSameLine
+  --elseposition same-line
+  --guardelse same-line
+--enable emptyBraces
+  --emptybraces spaced
+--enable enumNamespaces
+--enable extensionAccessControl
+  --extensionacl on-declarations
+--enable fileHeader
+  --header strip
+--enable hoistPatternLet
+  --patternlet hoist
+--enable indent
+  --indent 2
+  --tabwidth unspecified
+  --smarttabs disabled
+  --indentcase false
+  --ifdef no-indent
+  --xcodeindentation enabled
+  --indentstrings false
+--enable initCoderUnavailable
+--disable isEmpty
+--enable leadingDelimiters
+--enable linebreakAtEndOfFile
+--enable linebreaks
+  --linebreaks lf
+--enable markTypes
+  --marktypes always
+  --typemark "MARK: - %t"
+  --markextensions always
+  --extensionmark "MARK: - %t + %c"
+  --groupedextension "MARK: %c"
+--enable modifierOrder
+  #--modifierorder Comma-delimited list of modifiers in preferred order
+--enable numberFormatting
+  --decimalgrouping 3,6
+  --binarygrouping 4,8
+  --octalgrouping 4,8
+  --hexgrouping 4,8
+  --fractiongrouping disabled
+  --exponentgrouping disabled
+  --hexliteralcase uppercase
+  --exponentcase lowercase
+--disable organizeDeclarations
+  #--categorymark   Template for category mark comments. Defaults to "MARK: %c"
+  #--markCategories Insert MARK comments between categories (true by default)
+  #--beforemarks    Declarations placed before first mark (e.g. typealias,struct)
+  #--lifecycle  Names of additional Lifecycle methods (e.g. viewDidLoad)
+  #--organizetypes  Declarations to organize (default: class,actor,struct,enum)
+  #--structthreshold    Minimum line count to organize struct body. Defaults to 0
+  #--classthreshold Minimum line count to organize class body. Defaults to 0
+  #--enumthreshold  Minimum line count to organize enum body. Defaults to 0
+  #--extensionlength    Minimum line count to organize extension body. Defaults to 0
+--enable preferKeyPath
+--enable redundantBackticks
+--enable redundantBreak
+--enable redundantClosure
+--enable redundantExtensionACL
+--enable redundantFileprivate
+--enable redundantGet
+--enable redundantInit
+--enable redundantLet
+--enable redundantLetError
+--enable redundantNilInit
+--enable redundantObjc
+--enable redundantParens
+--enable redundantPattern
+--enable redundantRawValues
+--enable redundantReturn
+--enable redundantSelf
+  --self init-only
+  #--selfrequired   Comma-delimited list of functions with @autoclosure arguments
+--enable redundantType
+  --redundanttype inferred
+--enable redundantVoidReturnType
+--enable semicolons
+  --semicolons inline
+--enable sortedImports
+  --importgrouping alpha
+--disable sortedSwitchCases
+--enable spaceAroundBraces
+--enable spaceAroundBrackets
+--enable spaceAroundComments
+--enable spaceAroundGenerics
+--enable spaceAroundOperators
+  --operatorfunc spaced
+  #--nospaceoperators   Comma-delimited list of operators without surrounding space
+  --ranges no-space
+--enable spaceAroundParens
+--enable spaceInsideBraces
+--enable spaceInsideBrackets
+--enable spaceInsideComments
+--enable spaceInsideGenerics
+--enable spaceInsideParens
+#specifiers (deprecated)
+--enable strongOutlets
+--enable strongifiedSelf
+--enable todos
+--enable trailingClosures
+  #--trailingclosures   Comma-delimited list of functions that use trailing closures
+  #--nevertrailing  List of functions that should never use trailing closures
+--enable trailingCommas
+  --commas always 
+--enable trailingSpace
+  --trimwhitespace always
+--enable typeSugar
+  --shortoptionals always
+--enable unusedArguments
+  --stripunusedargs always
+--enable void
+  --voidtype void
+--enable wrap
+  --maxwidth 120
+  #--nowrapoperators    Comma-delimited list of operators that shouldn't be wrapped
+  --assetliterals actual-width
+  --wrapternary default
+--enable wrapArguments
+  --wraparguments before-first
+  --wrapparameters before-first
+  --wrapcollections before-first
+  --closingparen balanced
+  --wrapreturntype preserve
+  --wrapconditions after-first
+  --wraptypealiases before-first
+--enable wrapAttributes
+  --funcattributes preserve
+  --typeattributes preserve
+  --varattributes preserve
+--enable wrapEnumCases
+--disable wrapMultilineStatementBraces
+--disable wrapSwitchCases
+--enable yodaConditions
+  --yodaswap always

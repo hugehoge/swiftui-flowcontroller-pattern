@@ -1,0 +1,53 @@
+targets:
+  AppStateRepository:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.appstaterepository
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: Repositories/AppStateRepository
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 Repositories/AppStateRepository/Sources
+          ${SRCROOT}/bin/swiftlint Repositories/AppStateRepository/Sources
+    dependencies:
+      - target: RepositoryServices
+      - target: InfrastructureServices
+      - target: Entities
+  AppStateRepositoryTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Tests
+        group: Repositories/AppStateRepository
+        excludes:
+          - "**/.gitkeep"
+      - path: Tests/Generated/InfrastructureServicesMocks.generated.swift
+        group: Repositories/AppStateRepository/Tests/Generated
+        optional: true
+    preBuildScripts:
+      - name: Mockingbird
+        script: |
+          DERIVED_DATA="$(xcodebuild -showBuildSettings | sed -n 's|.*BUILD_ROOT = \(.*\)/Build/.*|\1|p')"
+          "${DERIVED_DATA}/SourcePackages/checkouts/mockingbird/mockingbird" generate \
+          --targets InfrastructureServices \
+          --testbundle AppStateRepositoryTests \
+          --output-dir Repositories/AppStateRepository/Tests/Generated \
+          --only-protocols \
+          --disable-swiftlint
+        outputFiles:
+          - ${SRCROOT}/Repositories/AppStateRepository/Tests/Generated/InfrastructureServicesMocks.generated.swift
+        basedOnDependencyAnalysis: no
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 Repositories/AppStateRepository/Tests
+          ${SRCROOT}/bin/swiftlint Repositories/AppStateRepository/Tests
+    dependencies:
+      - target: AppStateRepository
+      - package: CombineExpectations
+      - package: Mockingbird

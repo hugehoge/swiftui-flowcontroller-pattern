@@ -1,0 +1,19 @@
+targets:
+  UIServices:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.uiservices
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/UIServices
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/UIServices
+          ${SRCROOT}/bin/swiftlint UI/UIServices
+    dependencies:
+      - target: Entities

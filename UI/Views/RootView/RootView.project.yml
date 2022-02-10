@@ -1,0 +1,59 @@
+targets:
+  RootView:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.rootview
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/Views/RootView
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/RootView/Sources
+          ${SRCROOT}/bin/swiftlint UI/Views/RootView/Sources
+    dependencies:
+      - target: RepositoryServices
+      - target: UIServices
+  RootViewTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Tests
+        group: UI/Views/RootView
+        excludes:
+          - "**/.gitkeep"
+      - path: Tests/Generated/RepositoryServicesMocks.generated.swift
+        group: UI/Views/RootView/Tests/Generated
+        optional: true
+      - path: Tests/Generated/RootViewMocks.generated.swift
+        group: UI/Views/RootView/Tests/Generated
+        optional: true
+      - path: Tests/Generated/UIServicesMocks.generated.swift
+        group: UI/Views/RootView/Tests/Generated
+        optional: true
+    preBuildScripts:
+      - name: Mockingbird
+        script: |
+          DERIVED_DATA="$(xcodebuild -showBuildSettings | sed -n 's|.*BUILD_ROOT = \(.*\)/Build/.*|\1|p')"
+          "${DERIVED_DATA}/SourcePackages/checkouts/mockingbird/mockingbird" generate \
+          --targets RepositoryServices RootView UIServices \
+          --testbundle RootViewTests \
+          --output-dir UI/Views/RootView/Tests/Generated \
+          --disable-swiftlint
+        outputFiles:
+          - ${SRCROOT}/UI/Views/RootView/Tests/Generated/RepositoryServicesMocks.generated.swift
+          - ${SRCROOT}/UI/Views/RootView/Tests/Generated/RootViewMocks.generated.swift
+          - ${SRCROOT}/UI/Views/RootView/Tests/Generated/UIServicesMocks.generated.swift
+        basedOnDependencyAnalysis: no
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/RootView/Tests
+          ${SRCROOT}/bin/swiftlint UI/Views/RootView/Tests
+    dependencies:
+      - target: RootView
+      - package: CombineExpectations
+      - package: Mockingbird

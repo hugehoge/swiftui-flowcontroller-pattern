@@ -1,0 +1,58 @@
+targets:
+  AppSalesView:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.appsalesview
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/Views/AppSalesView
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/AppSalesView/Sources
+          ${SRCROOT}/bin/swiftlint UI/Views/AppSalesView/Sources
+    dependencies:
+      - target: Entities
+      - target: RepositoryServices
+      - target: Resources
+      - target: UIServices
+      - target: UIComponents
+  AppSalesViewTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Tests
+        group: UI/Views/AppSalesView
+        excludes:
+          - "**/.gitkeep"
+      - path: Tests/Generated/AppSalesViewMocks.generated.swift
+        group: UI/Views/AppSalesView/Tests/Generated
+        optional: true
+      - path: Tests/Generated/RepositoryServicesMocks.generated.swift
+        group: UI/Views/AppSalesView/Tests/Generated
+        optional: true
+    preBuildScripts:
+      - name: Mockingbird
+        script: |
+          DERIVED_DATA="$(xcodebuild -showBuildSettings | sed -n 's|.*BUILD_ROOT = \(.*\)/Build/.*|\1|p')"
+          "${DERIVED_DATA}/SourcePackages/checkouts/mockingbird/mockingbird" generate \
+          --targets AppSalesView RepositoryServices \
+          --testbundle AppSalesViewTests \
+          --output-dir UI/Views/AppSalesView/Tests/Generated \
+          --disable-swiftlint
+        outputFiles:
+          - ${SRCROOT}/UI/Views/AppSalesView/Tests/Generated/AppSalesViewMocks.generated.swift
+          - ${SRCROOT}/UI/Views/AppSalesView/Tests/Generated/RepositoryServicesMocks.generated.swift
+        basedOnDependencyAnalysis: no
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/AppSalesView/Tests
+          ${SRCROOT}/bin/swiftlint UI/Views/AppSalesView/Tests
+    dependencies:
+      - target: AppSalesView
+      - package: CombineExpectations
+      - package: Mockingbird

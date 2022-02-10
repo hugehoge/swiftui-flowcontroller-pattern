@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Apple Newsroom]]></title>
+  <id><![CDATA[https://www.apple.com/jp/newsroom/]]></id>
+  <link href="https://www.apple.com/jp/newsroom/rss-feed.rss" rel="self" />
+  <updated><![CDATA[2022-01-11T06:25:19.214Z]]></updated>
+  <entry>
+    <updated><![CDATA[2022-01-11T06:25:19.214Z]]></updated>
+    <category term="新着情報" />
+    <title><![CDATA[Appleのサービス、年間を通して人々の暮らしを豊かに]]></title>
+    <link href="https://www.apple.com/jp/newsroom/2022/01/apple-services-enrich-peoples-lives-throughout-the-year/" />
+    <id><![CDATA[https://www.apple.com/jp/newsroom/2022/01/apple-services-enrich-peoples-lives-throughout-the-year/]]></id>
+    <author>
+      <name><![CDATA[Apple Newsroom]]></name>
+    </author>
+    <content><![CDATA[Appleのサービスは、これまで以上に多くの方法でユーザーの暮らしを豊かにする革新的なアプリケーション、パワフルなコンテンツ、体験の提供を手助けしました。]]></content>
+    <link href="https://www.apple.com/newsroom/images/product/apps/standard/2022/Apple_Apps-and-Services-Update_hero.jpg.og.jpg" rel="enclosure" title="Appleのサービス、年間を通して人々の暮らしを豊かに" type="image/jpeg" />
+  </entry>
+</feed>

@@ -1,0 +1,35 @@
+targets:
+  Resources:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.resources
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: Resources
+      - path: Sources/Generated/Assets+Generated.swift
+        group: Resources/Sources/Generated
+        optional: true
+      - path: Sources/Generated/Files+Generated.swift
+        group: Resources/Sources/Generated
+        optional: true
+    preBuildScripts:
+      - name: SwiftGen
+        script: |
+          if [ $ACTION != "indexbuild" ]; then
+            ${SRCROOT}/bin/swiftgen config run --config Resources/Resources.swiftgen.yml
+          fi
+        outputFiles:
+          - ${SRCROOT}/Resources/Sources/Generated/Assets+Generated.swift
+          - ${SRCROOT}/Resources/Sources/Generated/Files+Generated.swift
+        basedOnDependencyAnalysis: no
+      - name: LicensePlist
+        script: |
+          ${SRCROOT}/bin/license-plist \
+          --suppress-opening-directory \
+          --fail-if-missing-license \
+          --output-path "${SRCROOT}/Resources/Sources/Settings.bundle" \
+          --markdown-path "${SRCROOT}/Resources/Sources/Licenses.md"

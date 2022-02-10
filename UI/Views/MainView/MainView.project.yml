@@ -1,0 +1,20 @@
+targets:
+  MainView:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.mainview
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/Views/MainView
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/MainView/Sources
+          ${SRCROOT}/bin/swiftlint UI/Views/MainView/Sources
+    dependencies:
+      - target: RepositoryServices
+      - target: UIServices

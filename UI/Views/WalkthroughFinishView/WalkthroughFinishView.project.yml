@@ -1,0 +1,20 @@
+targets:
+  WalkthroughFinishView:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.walkthroughfinishview
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/Views/WalkthroughFinishView
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/WalkthroughFinishView/Sources
+          ${SRCROOT}/bin/swiftlint UI/Views/WalkthroughFinishView/Sources
+    dependencies:
+      - target: Resources
+      - target: UIServices

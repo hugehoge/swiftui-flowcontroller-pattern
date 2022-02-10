@@ -1,0 +1,18 @@
+targets:
+  Entities:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.entities
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+        DEVELOPMENT_ASSET_PATHS: Entities/Sources/PreviewContents
+    sources:
+      - path: Sources
+        group: Entities
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 Entities/Sources
+          ${SRCROOT}/bin/swiftlint Entities/Sources

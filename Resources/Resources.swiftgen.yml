@@ -1,0 +1,20 @@
+input_dir: Sources
+output_dir: Sources/Generated
+
+files:
+  inputs:
+    - Licenses.md
+  outputs:
+    - templateName: structured-swift5
+      output: Files+Generated.swift
+      params:
+        publicAccess: true
+
+xcassets:
+  inputs:
+    - Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: Assets+Generated.swift
+      params:
+        publicAccess: true

@@ -1,0 +1,60 @@
+targets:
+  App:
+    type: application
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontrollerpattern
+        TARGETED_DEVICE_FAMILY: 1
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: 1
+        PRODUCT_NAME: "SwiftUI-FlowController Pattern"
+        PRODUCT_MODULE_NAME: App
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_FILE: "App/Sources/Info.plist"
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone:
+          UIInterfaceOrientationPortrait
+    sources:
+      - path: Sources
+        group: App
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 App/Sources
+          ${SRCROOT}/bin/swiftlint App/Sources
+    dependencies:
+      - target: Entities
+      - target: InfrastructureServices
+      - target: FeedClient
+      - target: UserDefaultsManager
+      - target: RepositoryServices
+      - target: AppStateRepository
+      - target: FeedRepository
+      - target: PreferencesRepository
+      - target: Resources
+      - target: UIServices
+      - target: UIComponents
+      - target: AppSalesView
+      - target: FeedLanguageSettingView
+      - target: FeedListView
+      - target: FeedView
+      - target: FullScreenModalView
+      - target: KeyboardTestView
+      - target: LicensesView
+      - target: MainView
+      - target: ModalTransitionTestView
+      - target: NoticeAlertView
+      - target: PageSheetModalView
+      - target: PushTransitionTestView
+      - target: RootView
+      - target: SettingsMenuView
+      - target: SettingsView
+      - target: ToolbarTestView
+      - target: UserNameSettingView
+      - target: WalkthroughFinishView
+      - target: WalkthroughIntroView
+      - target: WalkthroughSettingsView
+      - target: WalkthroughView
+      - package: Resolver

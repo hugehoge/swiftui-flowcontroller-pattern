@@ -1,0 +1,38 @@
+targets:
+  FeedClient:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.feedclient
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: Infrastructures/FeedClient
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 Infrastructures/FeedClient/Sources
+          ${SRCROOT}/bin/swiftlint Infrastructures/FeedClient/Sources
+    dependencies:
+      - target: InfrastructureServices
+      - target: Entities
+      - package: Kanna
+  FeedClientTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Tests
+        group: Infrastructures/FeedClient
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 Infrastructures/FeedClient/Tests
+          ${SRCROOT}/bin/swiftlint Infrastructures/FeedClient/Tests
+    dependencies:
+      - target: FeedClient
+      - package: OHHTTPStubs
+        product: OHHTTPStubs
+      - package: OHHTTPStubs
+        product: OHHTTPStubsSwift

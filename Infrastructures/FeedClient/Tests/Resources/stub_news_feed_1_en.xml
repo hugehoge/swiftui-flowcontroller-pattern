@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Apple Newsroom]]></title>
+  <id><![CDATA[https://www.apple.com/newsroom/]]></id>
+  <link href="https://www.apple.com/newsroom/rss-feed.rss" rel="self" />
+  <updated><![CDATA[2022-01-10T17:56:00.624Z]]></updated>
+  <entry>
+    <updated><![CDATA[2022-01-10T17:56:00.624Z]]></updated>
+    <category term="UPDATE" />
+    <title><![CDATA[Apple services enrich peoples’ lives throughout the year]]></title>
+    <link href="https://www.apple.com/newsroom/2022/01/apple-services-enrich-peoples-lives-throughout-the-year/" />
+    <id><![CDATA[https://www.apple.com/newsroom/2022/01/apple-services-enrich-peoples-lives-throughout-the-year/]]></id>
+    <author>
+      <name><![CDATA[Apple Newsroom]]></name>
+    </author>
+    <content><![CDATA[Apple’s services helped deliver innovative apps, powerful content, and experiences that enrich users’ lives in more ways than ever before.]]></content>
+    <link href="https://www.apple.com/newsroom/images/product/apps/standard/2022/Apple_Apps-and-Services-Update_hero.jpg.og.jpg" rel="enclosure" title="Apple services enrich peoples’ lives throughout the year" type="image/jpeg" />
+  </entry>
+</feed>

@@ -1,0 +1,3 @@
+public protocol WalkthroughFinishFlowControllerDelegate: AnyObject {
+  func walkthroughFinishFlowControllerFinishWalkthrough(_ flowController: WalkthroughFinishFlowControllerService)
+}

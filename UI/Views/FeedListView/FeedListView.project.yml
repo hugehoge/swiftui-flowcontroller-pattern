@@ -1,0 +1,24 @@
+targets:
+  FeedListView:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.feedlistview
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/Views/FeedListView
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/FeedListView/Sources
+          ${SRCROOT}/bin/swiftlint UI/Views/FeedListView/Sources
+    dependencies:
+      - target: Entities
+      - target: RepositoryServices
+      - target: Resources
+      - target: UIServices
+      - target: UIComponents
+      - package: Snappable

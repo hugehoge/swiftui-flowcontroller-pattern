@@ -1,0 +1,19 @@
+targets:
+  NoticeAlertView:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.noticealertview
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/Views/NoticeAlertView
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/NoticeAlertView/Sources
+          ${SRCROOT}/bin/swiftlint UI/Views/NoticeAlertView/Sources
+    dependencies:
+      - target: UIServices

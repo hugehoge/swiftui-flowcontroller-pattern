@@ -1,0 +1,33 @@
+<feed xmlns:im="http://itunes.apple.com/rss" xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<id>https://mzstoreservices-int-st.itunes.apple.com/rss/topfreeapplications/limit=1/xml</id>
+<title>iTunes Store: Top Free Apps</title>
+<updated>2022-02-02T22:18:47-07:00</updated>
+<link rel="alternate" type="text/html" href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewTop?cc=us&id=1&popId=96"/>
+<link rel="self" href="https://mzstoreservices-int-st.itunes.apple.com/rss/topfreeapplications/limit=1/xml"/>
+<icon>http://itunes.apple.com/favicon.ico</icon>
+<author>
+<name>iTunes Store</name>
+<uri>http://www.apple.com/itunes/</uri>
+</author>
+<rights>Copyright 2008 Apple Inc.</rights>
+<entry>
+<id im:id="1570369625" im:bundleId="me.bukovitz.NoteIt">https://apps.apple.com/us/app/noteit-drawing-app/id1570369625?uo=2</id>
+<title>NoteIt - Drawing App - Vitor Bukovitz</title>
+<summary>NoteIt is an application that allows you and your partner to connect each other accounts and make drawings for each other! The app also has support for widgets, so you can see a note or a drawing of your love on the home page of your phone.</summary>
+<im:name>NoteIt - Drawing App</im:name>
+<link rel="alternate" type="text/html" href="https://apps.apple.com/us/app/noteit-drawing-app/id1570369625?uo=2"/>
+<im:contentType term="Application" label="Application"/>
+<category im:id="6016" term="Entertainment" scheme="https://apps.apple.com/us/genre/ios-entertainment/id6016?uo=2" label="Entertainment"/>
+<link title="Preview" rel="enclosure" type="image/jpeg" href="https://is2-ssl.mzstatic.com/image/thumb/Purple116/v4/6e/31/bf/6e31bf50-350a-4cfc-20b5-ac059a3046d0/47b757b7-a344-4222-96fc-3913b4c546b9_Screenshot_1_-_2.jpg/480x480bb.jpg" im:assetType="preview">
+<im:duration>0</im:duration>
+</link>
+<im:artist href="https://apps.apple.com/us/developer/vitor-bukovitz/id1570369837?uo=2">Vitor Bukovitz</im:artist>
+<im:price amount="0.00" currency="USD">Get</im:price>
+<im:image height="53">https://is5-ssl.mzstatic.com/image/thumb/Purple126/v4/19/91/ea/1991ea05-f944-9b5c-993b-0fdf95cc28fc/AppIcon-1x_U007emarketing-0-7-0-85-220.png/53x53bb.png</im:image>
+<im:image height="75">https://is4-ssl.mzstatic.com/image/thumb/Purple126/v4/19/91/ea/1991ea05-f944-9b5c-993b-0fdf95cc28fc/AppIcon-1x_U007emarketing-0-7-0-85-220.png/75x75bb.png</im:image>
+<im:image height="100">https://is3-ssl.mzstatic.com/image/thumb/Purple126/v4/19/91/ea/1991ea05-f944-9b5c-993b-0fdf95cc28fc/AppIcon-1x_U007emarketing-0-7-0-85-220.png/100x100bb.png</im:image>
+<rights>© Copyright 2021, Vitor Bukovitz Developer</rights>
+<im:releaseDate label="June 4, 2021">2021-06-04T00:00:00-07:00</im:releaseDate>
+<content type="html"><table border="0" width="100%"> <tr> <td> <table border="0" width="100%" cellspacing="0" cellpadding="0"> <tr valign="top" align="left"> <td align="center" width="166" valign="top"> <a href="https://apps.apple.com/us/app/noteit-drawing-app/id1570369625?uo=2"><img border="0" alt="Vitor Bukovitz - NoteIt - Drawing App artwork" src="https://is3-ssl.mzstatic.com/image/thumb/Purple126/v4/19/91/ea/1991ea05-f944-9b5c-993b-0fdf95cc28fc/AppIcon-1x_U007emarketing-0-7-0-85-220.png/100x100bb.png" /></a> </td> <td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td> <td width="95%"> <b><a href="https://apps.apple.com/us/app/noteit-drawing-app/id1570369625?uo=2">NoteIt - Drawing App</a></b><br/> <a href="https://apps.apple.com/us/developer/vitor-bukovitz/id1570369837?uo=2">Vitor Bukovitz</a> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> <br/> <b>Genre:</b> <a href="https://apps.apple.com/us/genre/ios-entertainment/id6016?uo=2">Entertainment</a> <br/> <b>Release Date:</b> June 4, 2021 </font> </td> </tr> </table> </td> </tr> <tr> <td> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><br/>NoteIt is an application that allows you and your partner to connect each other accounts and make drawings for each other!<br/>The app also has support for widgets, so you can see a note or a drawing of your love on the home page of your phone.</font><br/> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> &#169; © Copyright 2021, Vitor Bukovitz Developer</font> </td> </tr> </table> </content>
+</entry>
+</feed>

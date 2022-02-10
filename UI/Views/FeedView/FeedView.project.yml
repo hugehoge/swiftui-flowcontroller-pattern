@@ -1,0 +1,20 @@
+targets:
+  FeedView:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.feedview
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/Views/FeedView
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/FeedView/Sources
+          ${SRCROOT}/bin/swiftlint UI/Views/FeedView/Sources
+    dependencies:
+      - target: Entities
+      - target: UIServices

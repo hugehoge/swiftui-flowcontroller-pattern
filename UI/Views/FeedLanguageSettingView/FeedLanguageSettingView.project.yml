@@ -1,0 +1,22 @@
+targets:
+  FeedLanguageSettingView:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.feedlanguagesettingview
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/Views/FeedLanguageSettingView
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/FeedLanguageSettingView/Sources
+          ${SRCROOT}/bin/swiftlint UI/Views/FeedLanguageSettingView/Sources
+    dependencies:
+      - target: Entities
+      - target: RepositoryServices
+      - target: UIServices
+      - target: UIComponents

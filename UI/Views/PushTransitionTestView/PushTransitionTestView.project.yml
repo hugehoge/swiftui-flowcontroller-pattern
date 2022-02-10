@@ -1,0 +1,19 @@
+targets:
+  PushTransitionTestView:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.pushtransitiontestview
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/Views/PushTransitionTestView
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/PushTransitionTestView/Sources
+          ${SRCROOT}/bin/swiftlint UI/Views/PushTransitionTestView/Sources
+    dependencies:
+      - target: UIServices

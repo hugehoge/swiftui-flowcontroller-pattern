@@ -1,0 +1,20 @@
+targets:
+  UIComponents:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.uicomponents
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/UIComponents
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/UIComponents/Sources
+          ${SRCROOT}/bin/swiftlint UI/UIComponents/Sources
+    dependencies:
+      - target: Entities
+      - package: Kingfisher

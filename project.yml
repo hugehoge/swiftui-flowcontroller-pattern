@@ -1,0 +1,69 @@
+name: swiftui-flowcontroller-pattern
+options:
+  minimumXcodeGenVersion: "2.25.0"
+  xcodeVersion: "13.2.1"
+  deploymentTarget:
+    iOS: "15.0"
+  usesTabs: false
+  indentWidth: 2
+  tabWidth: 2
+  groupSortPosition: top
+include:
+  - App/App.project.yml
+  - Entities/Entities.project.yml
+  - Infrastructures/InfrastructureServices/InfrastructureServices.project.yml
+  - Infrastructures/FeedClient/FeedClient.project.yml
+  - Infrastructures/UserDefaultsManager/UserDefaultsManager.project.yml
+  - Repositories/RepositoryServices/RepositoryServices.project.yml
+  - Repositories/AppStateRepository/AppStateRepository.project.yml
+  - Repositories/FeedRepository/FeedRepository.project.yml
+  - Repositories/PreferencesRepository/PreferencesRepository.project.yml
+  - Resources/Resources.project.yml
+  - UI/UIServices/UIServices.project.yml
+  - UI/UIComponents/UIComponents.project.yml
+  - UI/Views/AppSalesView/AppSalesView.project.yml
+  - UI/Views/FeedLanguageSettingView/FeedLanguageSettingView.project.yml
+  - UI/Views/FeedListView/FeedListView.project.yml
+  - UI/Views/FeedView/FeedView.project.yml
+  - UI/Views/FullScreenModalView/FullScreenModalView.project.yml
+  - UI/Views/KeyboardTestView/KeyboardTestView.project.yml
+  - UI/Views/LicensesView/LicensesView.project.yml
+  - UI/Views/MainView/MainView.project.yml
+  - UI/Views/ModalTransitionTestView/ModalTransitionTestView.project.yml
+  - UI/Views/NoticeAlertView/NoticeAlertView.project.yml
+  - UI/Views/PageSheetModalView/PageSheetModalView.project.yml
+  - UI/Views/PushTransitionTestView/PushTransitionTestView.project.yml
+  - UI/Views/RootView/RootView.project.yml
+  - UI/Views/SettingsMenuView/SettingsMenuView.project.yml
+  - UI/Views/SettingsView/SettingsView.project.yml
+  - UI/Views/ToolbarTestView/ToolbarTestView.project.yml
+  - UI/Views/UserNameSettingView/UserNameSettingView.project.yml
+  - UI/Views/WalkthroughFinishView/WalkthroughFinishView.project.yml
+  - UI/Views/WalkthroughIntroView/WalkthroughIntroView.project.yml
+  - UI/Views/WalkthroughSettingsView/WalkthroughSettingsView.project.yml
+  - UI/Views/WalkthroughView/WalkthroughView.project.yml
+packages:
+  CombineExpectations:
+    url: https://github.com/groue/CombineExpectations.git
+    version: 0.10.0
+  Kanna:
+    url: https://github.com/tid-kijyun/Kanna.git
+    version: 5.2.7
+  Kingfisher:
+    url: https://github.com/onevcat/Kingfisher.git
+    version: 7.1.2
+  MarkdownView:
+    url: https://github.com/keitaoouchi/MarkdownView.git
+    version: 1.8.3
+  Mockingbird:
+    url: https://github.com/birdrides/mockingbird.git
+    version: 0.20.0
+  OHHTTPStubs:
+    url: https://github.com/AliSoftware/OHHTTPStubs.git
+    version: 9.1.0
+  Resolver:
+    url: https://github.com/hmlongco/Resolver.git
+    version: 1.5.0
+  Snappable:
+    url: https://github.com/hugehoge/Snappable.git
+    version: 0.2.0

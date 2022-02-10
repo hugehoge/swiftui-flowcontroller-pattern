@@ -1,0 +1,22 @@
+targets:
+  SettingsMenuView:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.settingsmenuview
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/Views/SettingsMenuView
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/SettingsMenuView/Sources
+          ${SRCROOT}/bin/swiftlint UI/Views/SettingsMenuView/Sources
+    dependencies:
+      - target: Entities
+      - target: RepositoryServices
+      - target: UIServices
+      - target: UIComponents

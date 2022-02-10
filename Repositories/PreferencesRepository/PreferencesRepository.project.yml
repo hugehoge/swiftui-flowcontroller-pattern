@@ -1,0 +1,21 @@
+targets:
+  PreferencesRepository:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.preferencesrepository
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: Repositories/PreferencesRepository
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 Repositories/PreferencesRepository/Sources
+          ${SRCROOT}/bin/swiftlint Repositories/PreferencesRepository/Sources
+    dependencies:
+      - target: RepositoryServices
+      - target: InfrastructureServices
+      - target: Entities

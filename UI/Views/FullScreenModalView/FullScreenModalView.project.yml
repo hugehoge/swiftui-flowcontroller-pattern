@@ -1,0 +1,19 @@
+targets:
+  FullScreenModalView:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.fullscreenmodalview
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/Views/FullScreenModalView
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/FullScreenModalView/Sources
+          ${SRCROOT}/bin/swiftlint UI/Views/FullScreenModalView/Sources
+    dependencies:
+      - target: UIServices

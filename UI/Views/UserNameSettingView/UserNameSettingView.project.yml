@@ -1,0 +1,20 @@
+targets:
+  UserNameSettingView:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.hugehoge.swiftuiflowcontroller.usernamesettingview
+        TARGETED_DEVICE_FAMILY: 1
+        GENERATE_INFOPLIST_FILE: YES
+    sources:
+      - path: Sources
+        group: UI/Views/UserNameSettingView
+    preBuildScripts:
+      - name: Format and linting
+        script: |
+          ${SRCROOT}/bin/swiftformat --swiftversion 5.5 UI/Views/UserNameSettingView/Sources
+          ${SRCROOT}/bin/swiftlint UI/Views/UserNameSettingView/Sources
+    dependencies:
+      - target: RepositoryServices
+      - target: UIServices
