@@ -244,7 +244,7 @@ The feed viewer of [Apple Newsroom](https://www.apple.com/jp/newsroom/) and AppS
 Feed sources are below:
 
 - [Apple Newsroom](https://www.apple.com/newsroom/rss-feed.rss)
-- [Free App Ranking](https://itunes.apple.com/rss/topfreeapplications/limit=15/xml")
+- [Free App Ranking](https://itunes.apple.com/rss/topfreeapplications/limit=15/xml)
 - [Paid App Ranking](https://itunes.apple.com/rss/toppaidapplications/limit=15/xml)
 
 This is intended for implementing app typical features to check its feasibility.
