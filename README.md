@@ -168,7 +168,7 @@ public final class SettingsFlowController: UIViewController, SettingsMenuFlowCon
     menu.start()
   }
 
-  public func settingsMenuFlowController(_: SettingsMenuFlowControllerService, didSelect menuRow: SettingsMenu.Row) {
+public func settingsMenuFlowController(_: SettingsMenuFlowControllerService, didSelect menuRow: SettingsMenu.Row) {
     switch menuRow {
     case .userNameSetting:
       _showUserNameSettingView()
