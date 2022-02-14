@@ -168,7 +168,7 @@ public final class SettingsFlowController: UIViewController, SettingsMenuFlowCon
     menu.start()
   }
 
-  public func settingsMenuFlowController(_: SettingsMenuFlowControllerService, didSelect menuRow: SettingsMenu.Row) {
+public func settingsMenuFlowController(_: SettingsMenuFlowControllerService, didSelect menuRow: SettingsMenu.Row) {
     switch menuRow {
     case .userNameSetting:
       _showUserNameSettingView()
@@ -244,7 +244,7 @@ The feed viewer of [Apple Newsroom](https://www.apple.com/jp/newsroom/) and AppS
 Feed sources are below:
 
 - [Apple Newsroom](https://www.apple.com/newsroom/rss-feed.rss)
-- [Free App Ranking](https://itunes.apple.com/rss/topfreeapplications/limit=15/xml")
+- [Free App Ranking](https://itunes.apple.com/rss/topfreeapplications/limit=15/xml)
 - [Paid App Ranking](https://itunes.apple.com/rss/toppaidapplications/limit=15/xml)
 
 This is intended for implementing app typical features to check its feasibility.
@@ -302,3 +302,4 @@ $ make open
 ## References
 
 - [Coordinator and FlowController](https://github.com/onmyway133/blog/issues/106) by [@onmyway133](https://github.com/onmyway133)
+- [SwiftUI + FlowController パターンの提案](https://qiita.com/hugehoge/items/b28f134bc4806d584892)
