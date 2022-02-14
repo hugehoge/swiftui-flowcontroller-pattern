@@ -302,3 +302,4 @@ $ make open
 ## References
 
 - [Coordinator and FlowController](https://github.com/onmyway133/blog/issues/106) by [@onmyway133](https://github.com/onmyway133)
+- [SwiftUI + FlowController パターンの提案](https://qiita.com/hugehoge/items/b28f134bc4806d584892)
